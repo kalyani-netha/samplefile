@@ -1,0 +1,35 @@
+---------Installing MAVEN & GIT in JENKINS---------
+
+1. CD /opt (to install add-on application software packages)
+
+wget command allows to download files from internet using a linux operating system such as UBUNTU
+
+2. sudo wget http://www-us.apache.org/dist/maven/maven-3/3.5.3/binaries/apache-maven-3.5.3-bin.zip---(downlolads the binaries)
+
+3. sudo unzip apache-maven-3.5.3-bin.zip(unzip maven binaries)
+---ls
+
+4. rm -rf apache-maven-3.5.3-bin.zip(remove the zip file to save the space on the disk)
+
+--ls
+--now the file is unzipb
+
+5. cd apache-maven-3.5.3/
+--ls
+--cd bin/
+--mvn is the command we r going to use entirly
+--for build,package and for deploying packages to artifactory we use mvn command
+
+--to set permanat path for maven command
+
+6. vi ~/.bashrc(open this file)
+export M2_Home=/opt/apache-maven-3.5.3
+export M2=$M2_Home/bin
+export PATH=$M2:$PATH
+now we can execute mvn from any path
+
+--mvn --version
+7. source ~/.bashrc(reload the file as we have added new variables)
+mvn version
+
+8. sudo yum install git -y
